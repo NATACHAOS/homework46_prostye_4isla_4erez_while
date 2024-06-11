@@ -1,10 +1,15 @@
 """Найти простые числа в диапазоне введённого числа"""
-n = int(input("Простые числа в диапазоне от 1 до: "))  # вводим число
 
-for number in range(1, n + 1):
-    if number > 1:
-        for i in range(2, number):
-            if (number % i) == 0:
-                break
-        else:
-            print(number)
+a = int(input("Введите число: "))
+flag = True
+num = [x for x in range(1, a + 1)]
+d = 2
+spisok_s_prostymi_4islami = []
+while d * d <= a:
+    if a % d == 0:
+        flag = False
+        break
+    d += 1
+else:
+    spisok_s_prostymi_4islami.append(num)
+print(f'{spisok_s_prostymi_4islami} - Простые числа в диапазоне от 1 до {a}')
